@@ -3,5 +3,5 @@ export default function Index() {
     <div>
       <h2>Medicaly</h2>
     </div>
-  )
+  );
 }

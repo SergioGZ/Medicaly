@@ -1,0 +1,33 @@
+@import "@/scss/index.scss";
+
+.signIn {
+    width: 40%;
+
+    > h3 {
+        margin-bottom: 20px;
+        color : $text-primary;
+    }
+
+    @media (max-width: 768px) {
+        width: 70%;
+    }
+
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+
+    > a {
+        margin-top: 10px;
+        font-weight: bold;
+        width: 100%;
+        color: $text-primary;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+}

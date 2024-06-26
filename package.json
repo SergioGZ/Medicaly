@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "formik": "^2.4.6",
+    "jwt-decode": "^4.0.0",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.77.6",
     "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^2.1.5"
+    "semantic-ui-react": "^2.1.5",
+    "sonner": "^1.5.0",
+    "yup": "^1.4.0"
   }
 }

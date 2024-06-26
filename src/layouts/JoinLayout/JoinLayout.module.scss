@@ -1,0 +1,63 @@
+@import "~/src/scss/index.scss";
+
+.container {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.topBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+
+  > a {
+    > img {
+        height: 39px;
+    }
+
+    > i {
+        font-size: 26px;
+        color: $danger;
+        margin: 0;
+    }
+  }
+}
+
+.blockLeft {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $background-primary;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%; 
+    }
+}
+
+.blockRight {
+    width: 50%;
+    background-image: linear-gradient(to bottom, #19be7fc2, #19be7f81), url('/images/wallpaper.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
