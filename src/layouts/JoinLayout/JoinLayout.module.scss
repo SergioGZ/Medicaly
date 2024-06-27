@@ -16,48 +16,48 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: fit-content;
   display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  padding: 20px;
 
   > a {
-    > img {
-        height: 39px;
-    }
-
-    > i {
-        font-size: 26px;
-        color: $danger;
-        margin: 0;
-    }
+    color: $danger;
   }
 }
 
 .blockLeft {
-    width: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-primary;
+
+  > a {
+    > img {
+      height: 80px;
+      margin-bottom: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $background-primary;
-
-    @media (max-width: 768px) {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%; 
-    }
+    height: 100%;
+  }
 }
 
 .blockRight {
-    width: 50%;
-    background-image: linear-gradient(to bottom, #19be7fc2, #19be7f81), url('/images/wallpaper.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 100%;
+  width: 50%;
+  background-image: linear-gradient(to bottom, #19be7fc2, #19be7f81),
+    url("/images/wallpaper.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
 
-    @media (max-width: 768px) {
-        display: none;
-    }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
