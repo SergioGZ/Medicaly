@@ -1,38 +1,36 @@
 @import "@/scss/index.scss";
 
-.topBar {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  z-index: 5;
-}
-
-.left {
-  width: 20%;
-
-  .link {
-    width: fit-content;
-
-    a > img {
-      height: 40px;
-    }
+.logo {
+  > img {
+    height: 50px;
   }
 }
 
-.center {
-  width: 60%;
-  display: flex;
-  justify-content: center;
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
-  color: $text-primary;
-}
+  .menu {
+    background-color: $background-quartenary__blur;
+    backdrop-filter: blur(20px);
+    padding: 20px 50px;
+    border-radius: 100px;
+  }
 
-.right {
-  width: 20%;
-  display: flex;
-  justify-content: flex-end;
+  .category {
+    > a {
+      color: $text-primary;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 0 1rem;
+      padding: 0.5rem 0;
+      transition: color 0.3s;
 
-  color: $text-primary;
+      &:hover {
+        color: $primary;
+        cursor: pointer;
+      }
+    }
+  }
 }
