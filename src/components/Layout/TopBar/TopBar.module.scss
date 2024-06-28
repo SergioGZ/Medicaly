@@ -1,36 +1,58 @@
 @import "@/scss/index.scss";
 
-.logo {
-  > img {
-    height: 50px;
-  }
-}
+.topBar {
+  width: 100%;
 
-.navbar {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 60px;
+    }
+  }
 
   .menu {
-    background-color: $background-quartenary__blur;
-    backdrop-filter: blur(20px);
-    padding: 20px 50px;
-    border-radius: 100px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+
+    .category {
+      > a {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        padding: 20px 15px;
+        text-decoration: none;
+        color: $text-primary;
+
+        &:hover {
+          color: $primary-hover;
+        }
+
+        img {
+          //filter: brightness(0) invert(1);
+          height: 30px;
+          padding-right: 10px;
+        }
+      }
+    }
   }
 
-  .category {
-    > a {
-      color: $text-primary;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin: 0 1rem;
-      padding: 0.5rem 0;
-      transition: color 0.3s;
+  .actions {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      &:hover {
-        color: $primary;
-        cursor: pointer;
-      }
+    .search {
+      margin-right: 10px;
     }
   }
 }
