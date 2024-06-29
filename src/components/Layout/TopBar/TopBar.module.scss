@@ -1,58 +1,24 @@
 @import "@/scss/index.scss";
 
-.topBar {
-  width: 100%;
+.logo {
+  height: 70px;
+}
 
-  .logo {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      height: 60px;
+.category {
+  display: flex;
+  padding: 0 20px;
+
+  > a {
+    color: $text-primary;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    &:hover {
+      color: $primary;
     }
-  }
 
-  .menu {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    align-items: center;
-    padding: 0;
-
-    .category {
-      > a {
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        padding: 20px 15px;
-        text-decoration: none;
-        color: $text-primary;
-
-        &:hover {
-          color: $primary-hover;
-        }
-
-        img {
-          //filter: brightness(0) invert(1);
-          height: 30px;
-          padding-right: 10px;
-        }
-      }
-    }
-  }
-
-  .actions {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .search {
-      margin-right: 10px;
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
     }
   }
 }

@@ -1,6 +1,6 @@
 import "semantic-ui-css/semantic.min.css"
 import { useEffect, useState } from "react"
-import { Image, Icon, Input, Label, Button } from "semantic-ui-react"
+import { Image, Input } from "semantic-ui-react"
 import { Account } from "@/components/Layout"
 import { useRouter } from "next/router"
 import Link from "next/link"
@@ -28,31 +28,26 @@ export function TopBar(props) {
   }, [])
 
   return (
-    <nav className={styles.topBar}>
-      <div className="fluid">
-        <div className="row py-3">
-          <div className="col-lg-3 col-md-3 col-sm-12 px-0">
-            <div className={styles.logo}>
-              <Link href="/">
-                <Image src="images/logoMedicaly.png" alt="Medicaly" />
-              </Link>
-            </div>
+    <section>
+      <header>
+        <div className="grid lg:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+          <div className="min-h-[10vh] col-auto flex justify-center items-center">
+            <Link href="/">
+              <Image src="/images/logoMedicaly.png" className={styles.logo} />
+            </Link>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-12 px-0">
-            <div className={styles.menu}>
+          <div className="min-h-[100px] col-span-2 flex justify-center items-center">
+            <div className="flex justify-center items-center">
               {map(categories, (category) => (
-                <span
-                  key={category.id}
-                  className={`nav-item px-4 ${styles.category}`}
-                >
+                <span key={category.id} className={` ${styles.category}`}>
                   <Link
                     href={`/category/${category.attributes.slug}`}
-                    className="d-flex align-items-center"
+                    className="flex justify-center items-center"
                   >
                     <Image
                       src={category.attributes.icon.data.attributes.url}
                       size="mini"
-                      className="pe-2"
+                      className="me-3"
                     />
                     {category.attributes.title}
                   </Link>
@@ -60,16 +55,19 @@ export function TopBar(props) {
               ))}
             </div>
           </div>
-          <div className="col-lg-3 col-md-3 col-sm-12 px-0">
-            <div className={styles.actions}>
-              <div className={styles.search}>
-                <Input icon="search" placeholder="Buscar..." />
-              </div>
+          <div class="min-h-[100px] col-auto flex justify-center items-center">
+            <div class="flex items-center">
+              <Input
+                icon="search"
+                placeholder="Buscar producto..."
+                size="large"
+                className="me-8"
+              />
               <Account />
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </header>
+    </section>
   )
 }
