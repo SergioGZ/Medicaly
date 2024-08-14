@@ -15,8 +15,6 @@ export function Menu(props) {
 
   const handleSearch = () => setShowSearch((prevState) => !prevState)
 
-  console.log(categories)
-
   useEffect(() => {
     ;(async () => {
       try {

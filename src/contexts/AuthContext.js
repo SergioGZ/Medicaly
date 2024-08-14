@@ -1,58 +1,59 @@
-import { createContext, useState, useEffect } from "react";
-import { Token, User } from "@/api";
+import { createContext, useState, useEffect } from "react"
+import { Token, User } from "@/api"
 
-const tokenCtrl = new Token();
-const userCtrl = new User();
+const tokenCtrl = new Token()
+const userCtrl = new User()
 
-export const AuthContext = createContext();
+export const AuthContext = createContext()
 
 export function AuthProvider(props) {
-  const { children } = props;
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { children } = props
+  const [user, setUser] = useState(null)
+  const [token, setToken] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    (async () => {
-      const token = tokenCtrl.getToken();
+    ;(async () => {
+      const token = tokenCtrl.getToken()
 
       if (!token) {
-        logout();
-        setLoading(false);
-        return;
+        logout()
+        setLoading(false)
+        return
       }
 
       if (tokenCtrl.hasExpired(token)) {
-        logout();
+        logout()
       } else {
-        await login(token);
+        await login(token)
       }
-    })();
-  }, []);
+    })()
+  }, [])
 
   const login = async (token) => {
     try {
-      tokenCtrl.setToken(token); // Set token in local storage
-      const response = await userCtrl.getMe(); // Get user data
-      console.log(response);
-      setUser(response); // Set user in state user
-      setToken(token); // Set token in state token
-      setLoading(false); // Set loading to false
+      tokenCtrl.setToken(token) // Set token in local storage
+      const response = await userCtrl.getMe() // Get user data
+      console.log(response)
+      console.log(token)
+      setUser(response) // Set user in state user
+      setToken(token) // Set token in state token
+      setLoading(false) // Set loading to false
     } catch (error) {
-      console.error(error);
-      setLoading(false);
+      console.error(error)
+      setLoading(false)
     }
-  };
+  }
 
   const logout = () => {
-    tokenCtrl.removeToken();
-    setUser(null);
-    setToken(null);
-  };
+    tokenCtrl.removeToken()
+    setUser(null)
+    setToken(null)
+  }
 
   const updateUser = (key, value) => {
-    setUser({ ...user, [key]: value });
-  };
+    setUser({ ...user, [key]: value })
+  }
 
   const data = {
     accessToken: token,
@@ -60,11 +61,11 @@ export function AuthProvider(props) {
     login,
     logout,
     updateUser,
-  };
-
-  if (loading) {
-    return null;
   }
 
-  return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
+  if (loading) {
+    return null
+  }
+
+  return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>
 }
