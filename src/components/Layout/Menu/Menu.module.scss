@@ -45,6 +45,10 @@
       background-color: $primary-hover;
       cursor: pointer;
     }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .inputContainer {

@@ -7,6 +7,12 @@
   width: 100%;
   padding: 20px;
   z-index: 5;
+
+  @media (max-width: 768px) {
+    display: block;
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
 }
 
 .left {
@@ -19,20 +25,35 @@
       height: 40px;
     }
   }
+
+  @media (max-width: 768px) {
+    .link {
+      display: none;
+    }
+  }
 }
 
 .center {
   width: 60%;
   display: flex;
   justify-content: center;
-
   color: $text-primary;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+  }
 }
 
 .right {
   width: 20%;
   display: flex;
   justify-content: flex-end;
-
   color: $text-primary;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+  }
 }

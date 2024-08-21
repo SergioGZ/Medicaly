@@ -25,7 +25,7 @@ export function Footer() {
           <div className={styles.social}>
             <Button as="a" href="#" circular color="linkedin" icon="linkedin" />
             <Button as="a" href="#" circular color="facebook" icon="facebook" />
-            <Button as="a" href="#" circular color="google" icon="google" />
+            <Button as="a" href="#" circular color="red" icon="google" />
           </div>
         </div>
 
