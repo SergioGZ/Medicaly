@@ -1,0 +1,12 @@
+@import "~/src/scss/index.scss";
+
+.container {
+  position: relative;
+  height: 500px;
+}
+
+.wallpaper {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}

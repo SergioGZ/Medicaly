@@ -1,9 +1,14 @@
 import { BasicLayout } from "@/layouts"
+import { Home } from "@/components/Home"
+import { Separator } from "@/components/Shared"
 
 export default function HomePage() {
   return (
-    <BasicLayout>
-      <h1 style={{ paddingTop: 100 }}>Home Page</h1>
-    </BasicLayout>
+    <>
+      <BasicLayout>
+        <Home.Banner />
+        <Separator height={100} />
+      </BasicLayout>
+    </>
   )
 }
