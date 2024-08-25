@@ -10,11 +10,16 @@
   padding: 0 50px 0 20px;
   border-radius: 100px 0 0 100px;
 
+  @media (max-width: 768px) {
+    border-radius: 100px;
+  }
+
   > a {
     display: flex;
     align-items: center;
     padding: 20px 15px;
     text-decoration: none;
+    font-weight: bold;
     color: $text-primary;
 
     &:hover {

@@ -1,0 +1,54 @@
+@import "~/src/scss/index.scss";
+
+.gridMedicines {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  margin-top: 20px;
+}
+
+.medicine {
+  width: 25%;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+
+  > div {
+    position: relative;
+    padding: 10px 10px 0 10px;
+
+    &:last-of-type {
+      padding-top: 0;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+    }
+
+    > img {
+      width: 100%;
+      border-radius: 16px;
+      transition: ease 0.3s;
+
+      &:hover {
+        opacity: 0.6;
+        transform: scale(1.05);
+        transition: ease 0.3s;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: $text-primary;
+  margin-left: 5px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: $primary;
+}

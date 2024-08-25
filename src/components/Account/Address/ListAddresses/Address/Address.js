@@ -45,6 +45,7 @@ export function Address(props) {
         onCancel={openCloseConfirm}
         onConfirm={deleteAddress}
         content="¿Estás seguro de que quieres eliminar esta dirección?"
+        cancelButton="Cancelar"
       />
 
       <BasicModal
