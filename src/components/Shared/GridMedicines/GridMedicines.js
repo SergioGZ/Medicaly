@@ -5,7 +5,6 @@ import styles from "./GridMedicines.module.scss"
 
 export function GridMedicines(props) {
   const { medicines } = props
-  console.log(medicines)
   return (
     <div className={styles.gridMedicines}>
       {map(medicines, (medicine) => (

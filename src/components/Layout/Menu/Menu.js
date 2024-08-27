@@ -30,7 +30,7 @@ export function Menu(props) {
   return (
     <div className={styles.categories}>
       {map(categories, (category) => (
-        <Link key={category.id} href={`/category/${category.attributes.slug}`}>
+        <Link key={category.id} href={`/medicines/${category.attributes.slug}`}>
           <Image src={category.attributes.icon.data.attributes.url} />
           {category.attributes.title}
         </Link>
