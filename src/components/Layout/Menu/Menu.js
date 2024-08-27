@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Image, Icon, Input } from "semantic-ui-react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { map, set } from "lodash"
 import classNames from "classnames"
 import { Category } from "@/api"
@@ -11,14 +12,15 @@ const categoryCtrl = new Category()
 export function Menu(props) {
   const { isOpenSearch } = props
   const [categories, setCategories] = useState(null)
-  const [showSearch, setShowSearch] = useState(false)
+  const [showSearch, setShowSearch] = useState(isOpenSearch)
+  const [searchText, setSearchText] = useState("")
+  const router = useRouter()
 
   const handleSearch = () => setShowSearch((prevState) => !prevState)
 
   useEffect(() => {
     ;(async () => {
       try {
-        //TODO: Petición GET a la API
         const result = await categoryCtrl.getAll()
         setCategories(result.data)
       } catch (error) {
@@ -26,6 +28,15 @@ export function Menu(props) {
       }
     })()
   }, [])
+
+  useEffect(() => {
+    setSearchText(router.query.s || "")
+  }, [])
+
+  const onSearch = (text) => {
+    setSearchText(text)
+    router.replace(`/search?s=${text}`)
+  }
 
   return (
     <div className={styles.categories}>
@@ -49,6 +60,9 @@ export function Menu(props) {
           id="search-meds"
           placeholder="Buscar medicamentos"
           className={styles.input}
+          focus={true}
+          value={searchText}
+          onChange={(_, data) => onSearch(data.value)}
         />
         <Icon
           name="close"
