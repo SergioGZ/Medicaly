@@ -1,0 +1,10 @@
+@import "~/src/scss/index.scss";
+
+.summary {
+  padding: 20px 20px 20px 0;
+
+  p {
+    color: $text-secondary;
+    line-height: 25px;
+  }
+}

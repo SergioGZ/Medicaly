@@ -64,4 +64,23 @@ export class Medicine {
       throw error
     }
   }
+
+  async getMedicineBySlug(slug) {
+    try {
+      const filters = `filters[slug][$eq]=${slug}`
+      const populate = `populate[0]=cover&populate[1]=category&populate[2]=category.icon`
+      const urlParams = `${filters}&${populate}`
+
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.MEDICINE}?${urlParams}`
+
+      const response = await fetch(url)
+      const result = await response.json()
+
+      if (response.status !== 200) throw result
+
+      return result.data[0]
+    } catch (error) {
+      throw error
+    }
+  }
 }

@@ -1,0 +1,10 @@
+@import "~/src/scss/index.scss";
+
+.wishlistIcon {
+  color: $danger;
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
