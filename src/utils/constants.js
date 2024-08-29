@@ -13,6 +13,7 @@ export const ENV = {
     CATEGORY: "categories",
     ADDRESS: "addresses",
     MEDICINE: "medicines",
+    WISHLIST: "wishlists",
   },
   TOKEN: "token",
 }

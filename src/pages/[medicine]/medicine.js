@@ -5,7 +5,6 @@ import { Separator } from "@/components/Shared"
 
 export default function MedicinePage(props) {
   const { medicine } = props
-  console.log(props)
 
   return (
     <>
