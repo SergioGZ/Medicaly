@@ -39,37 +39,42 @@ export function Menu(props) {
   }
 
   return (
-    <div className={styles.categories}>
-      {map(categories, (category) => (
-        <Link key={category.id} href={`/medicines/${category.attributes.slug}`}>
-          <Image src={category.attributes.icon.data.attributes.url} />
-          {category.attributes.title}
-        </Link>
-      ))}
+    <>
+      <div className={styles.categories}>
+        {map(categories, (category) => (
+          <Link
+            key={category.id}
+            href={`/medicines/${category.attributes.slug}`}
+          >
+            <Image src={category.attributes.icon.data.attributes.url} />
+            {category.attributes.title}
+          </Link>
+        ))}
 
-      <button className={styles.search} onClick={() => handleSearch()}>
-        <Icon name="search" />
-      </button>
+        <button className={styles.search} onClick={() => handleSearch()}>
+          <Icon name="search" />
+        </button>
 
-      <div
-        className={classNames(styles.inputContainer, {
-          [styles.active]: showSearch,
-        })}
-      >
-        <Input
-          id="search-meds"
-          placeholder="Buscar medicamentos"
-          className={styles.input}
-          focus={true}
-          value={searchText}
-          onChange={(_, data) => onSearch(data.value)}
-        />
-        <Icon
-          name="close"
-          className={styles.closeInput}
-          onClick={() => handleSearch()}
-        />
+        <div
+          className={classNames(styles.inputContainer, {
+            [styles.active]: showSearch,
+          })}
+        >
+          <Input
+            id="search-meds"
+            placeholder="Buscar medicamentos"
+            className={styles.input}
+            focus={true}
+            value={searchText}
+            onChange={(_, data) => onSearch(data.value)}
+          />
+          <Icon
+            name="close"
+            className={styles.closeInput}
+            onClick={() => handleSearch()}
+          />
+        </div>
       </div>
-    </div>
+    </>
   )
 }

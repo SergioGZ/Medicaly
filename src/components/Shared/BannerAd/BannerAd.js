@@ -1,5 +1,5 @@
 import { Button, Container, Image } from "semantic-ui-react"
-import { Link } from "next/link"
+import Link from "next/link"
 import styles from "./BannerAd.module.scss"
 
 export function BannerAd(props) {
@@ -12,7 +12,7 @@ export function BannerAd(props) {
         <Container className={styles.containerInfo}>
           <h2>{title}</h2>
           <h3>{subtitle}</h3>
-          <Button as={Link} to={btnLink} primary>
+          <Button as={Link} href={btnLink} primary>
             {btnTitle}
           </Button>
         </Container>

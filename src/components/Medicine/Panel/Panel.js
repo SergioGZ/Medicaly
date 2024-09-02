@@ -1,11 +1,21 @@
+import { useState } from "react"
 import { Button, Container, Icon, Image } from "semantic-ui-react"
-import { fn } from "@/utils"
+import { useCart } from "@/hooks"
 import styles from "./Panel.module.scss"
 import { WishlistIcon } from "@/components/Shared"
 
 export function Panel(props) {
   const { medicineId, medicine } = props
+  const [loading, setLoading] = useState(false)
+  const { addCart } = useCart()
+
   const category = medicine.category.data
+
+  const addCartWrapper = () => {
+    setLoading(true)
+    addCart(medicineId)
+    setTimeout(() => setLoading(false), 1000)
+  }
 
   return (
     <Container className={styles.panel}>
@@ -35,7 +45,7 @@ export function Panel(props) {
             <WishlistIcon medicineId={medicineId} className={styles.heart} />
           </div>
 
-          <Button primary fluid>
+          <Button primary fluid loading={loading} onClick={addCartWrapper}>
             Comprar ahora
           </Button>
         </div>

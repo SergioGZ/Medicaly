@@ -1,4 +1,5 @@
 import { Form } from "semantic-ui-react"
+import { Toaster, toast } from "sonner"
 import { useFormik } from "formik"
 import { User } from "@/api"
 import { useAuth } from "@/hooks"
@@ -15,9 +16,8 @@ export function ChangeNameForm() {
     validationOnChange: false,
     onSubmit: async (formValue) => {
       try {
-        console.log(formValue)
-        console.log(user.id)
         await userCtrl.updateMe(user.id, formValue)
+        toast.success("Nombre actualizado")
       } catch (error) {
         console.error(error)
       }
@@ -26,6 +26,7 @@ export function ChangeNameForm() {
 
   return (
     <Form onSubmit={formik.handleSubmit}>
+      <Toaster position="bottom-left" richColors />
       <label>Nombre y apellidos</label>
       <div className={styles.content}>
         <Form.Input

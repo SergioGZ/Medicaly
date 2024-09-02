@@ -7,7 +7,6 @@ import styles from "./AddAddress.module.scss"
 export function AddAddress(props) {
   const { onReload } = props
   const [show, setShow] = useState(false)
-  console.log(show)
 
   const onOpenCloseModal = () => {
     setShow((prevState) => !prevState)
