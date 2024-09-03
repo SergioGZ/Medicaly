@@ -22,8 +22,6 @@ export function Orders() {
     })()
   }, [])
 
-  if (!orders) return <NoResult text="No hay pedidos" />
-
   return (
     <div>
       {!orders ? (
