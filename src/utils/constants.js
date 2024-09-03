@@ -1,6 +1,6 @@
 export const ENV = {
-  SERVER_HOST: "strapi-medicaly-production.up.railway.app",
-  API_URL: "strapi-medicaly-production.up.railway.app/api",
+  SERVER_HOST: "http://strapi-medicaly-production.up.railway.app",
+  API_URL: "https://strapi-medicaly-production.up.railway.app/api",
   ENDPOINTS: {
     AUTH: {
       REGISTER: "auth/local/register",
