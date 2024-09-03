@@ -23,7 +23,7 @@ export function Orders() {
   }, [])
 
   return size(orders) === 0 ? (
-    <NoResult text="No hay pedidos" />
+    <NoResult text="No has realizado ningún pedido" />
   ) : (
     map(orders, (order) => <Order key={order.id} order={order} />)
   )
