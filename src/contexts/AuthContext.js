@@ -34,8 +34,6 @@ export function AuthProvider(props) {
     try {
       tokenCtrl.setToken(token) // Set token in local storage
       const response = await userCtrl.getMe() // Get user data
-      console.log(response)
-      console.log(token)
       setUser(response) // Set user in state user
       setToken(token) // Set token in state token
       setLoading(false) // Set loading to false
