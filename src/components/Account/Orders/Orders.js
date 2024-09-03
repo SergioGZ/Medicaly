@@ -26,9 +26,11 @@ export function Orders() {
 
   return (
     <div>
-      {map(orders, (order) => (
-        <Order key={order.id} order={order} />
-      ))}
+      {!orders ? (
+        <NoResult text="No hay pedidos" />
+      ) : (
+        map(orders, (order) => <Order key={order.id} order={order} />)
+      )}
     </div>
   )
 }
