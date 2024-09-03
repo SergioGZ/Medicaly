@@ -1,15 +1,14 @@
-import Link from "next/link";
-import Head from "next/head";
-import { JoinLayout } from "@/layouts";
-import styles from "./sign-in.module.scss";
-import { LoginForm } from "@/components/Auth";
+import Link from "next/link"
+import Head from "next/head"
+import { JoinLayout } from "@/layouts"
+import styles from "./sign-in.module.scss"
+import { Seo } from "@/components/Shared"
+import { LoginForm } from "@/components/Auth"
 
 export default function SignInPage() {
   return (
-    <div>
-      <Head>
-        <title>Medicaly | Iniciar sesión</title>
-      </Head>
+    <>
+      <Seo />
       <JoinLayout>
         <div className={styles.signIn}>
           <h3>Iniciar sesión</h3>
@@ -20,6 +19,6 @@ export default function SignInPage() {
           </div>
         </div>
       </JoinLayout>
-    </div>
-  );
+    </>
+  )
 }

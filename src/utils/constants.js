@@ -15,6 +15,7 @@ export const ENV = {
     MEDICINE: "medicines",
     WISHLIST: "wishlists",
     PAYMENT_ORDER: "payment-order",
+    ORDER: "orders",
   },
   TOKEN: "token",
   CART: "cart",

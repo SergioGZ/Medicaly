@@ -6,6 +6,7 @@ import {
   Separator,
   NoResult,
   Pagination,
+  Seo,
 } from "@/components/Shared"
 
 export default function CategoryPage(props) {
@@ -14,6 +15,7 @@ export default function CategoryPage(props) {
 
   return (
     <>
+      <Seo title={`Medicaly | ${category.attributes.title}`} />
       <BasicLayout relative>
         <Container>
           <Separator height={50} />

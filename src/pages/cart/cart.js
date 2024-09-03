@@ -4,6 +4,7 @@ import { Medicine } from "@/api"
 import { useCart } from "@/hooks"
 import { CartLayout } from "@/layouts"
 import { Cart } from "@/components/Cart"
+import { Seo } from "@/components/Shared"
 
 const medicineCtrl = new Medicine()
 
@@ -33,6 +34,7 @@ export default function CartPage() {
 
   return (
     <>
+      <Seo title="Medicaly | Carrito" />
       <CartLayout>
         {currentStep === 1 && <Cart.StepOne medicines={medicines} />}
         {currentStep === 2 && <Cart.StepTwo medicines={medicines} />}
