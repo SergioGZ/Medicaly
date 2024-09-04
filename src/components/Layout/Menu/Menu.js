@@ -14,16 +14,40 @@ export function Menu() {
   const [searchText, setSearchText] = useState("")
   const router = useRouter()
 
-  useEffect(() => {
-    ;(async () => {
-      try {
-        const result = await categoryCtrl.getAll()
-        setCategories(result.data)
-      } catch (error) {
-        console.error(error)
-      }
-    })()
-  }, [])
+  const data = [
+    {
+      id: 1,
+      slug: "analgesicos",
+      imgUrl:
+        "https://medicaly.s3.eu-west-1.amazonaws.com/pildora_3f494e0d91.png",
+      title: "Analgésicos y antiinflamatorios",
+    },
+    {
+      id: 2,
+      slug: "antigripales",
+      imgUrl:
+        "https://medicaly.s3.eu-west-1.amazonaws.com/antigripales_a1d819ad8e.png",
+      title: "Resfriados y gripe",
+    },
+    {
+      id: 3,
+      slug: "digestivos",
+      imgUrl:
+        "https://medicaly.s3.eu-west-1.amazonaws.com/analgesicos_86569d60c0.png",
+      title: "Sistema digestivo",
+    },
+  ]
+
+  // useEffect(() => {
+  //   ;(async () => {
+  //     try {
+  //       const result = await categoryCtrl.getAll()
+  //       setCategories(result.data)
+  //     } catch (error) {
+  //       console.error(error)
+  //     }
+  //   })()
+  // }, [])
 
   useEffect(() => {
     setSearchText(router.query.s || "")
@@ -37,13 +61,10 @@ export function Menu() {
   return (
     <>
       <div className={styles.categories}>
-        {map(categories, (category) => (
-          <Link
-            key={category.id}
-            href={`/medicines/${category.attributes.slug}`}
-          >
-            <Image src={category.attributes.icon.data.attributes.url} />
-            {category.attributes.title.toUpperCase()}
+        {map(data, (category) => (
+          <Link key={category.id} href={`/medicines/${category.slug}`}>
+            <Image src={category.imgUrl} />
+            {category.title.toUpperCase()}
           </Link>
         ))}
         <div className={styles.search}>
