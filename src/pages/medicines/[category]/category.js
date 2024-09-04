@@ -8,6 +8,7 @@ import {
   Pagination,
   Seo,
 } from "@/components/Shared"
+import styles from "./category.module.scss"
 
 export default function CategoryPage(props) {
   const { medicines, category, pagination } = props
@@ -17,7 +18,7 @@ export default function CategoryPage(props) {
     <>
       <Seo title={`Medicaly | ${category.attributes.title}`} />
       <BasicLayout relative>
-        <Container>
+        <Container className={styles.container}>
           <Separator height={50} />
           <h2>{category.attributes.title}</h2>
           {hasProducts ? (
