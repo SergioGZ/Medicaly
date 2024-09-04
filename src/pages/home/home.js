@@ -47,7 +47,7 @@ export default function HomePage() {
             subtitle="Recibe tus pedidos en la puerta de tu casa"
             btnTitle="Entrar ahora"
             btnLink="/join/sign-up"
-            wallpaper="/images/banner3.jpg"
+            wallpaper="/images/banner2.jpg"
           />
         ) : (
           <BannerAd
@@ -55,7 +55,7 @@ export default function HomePage() {
             subtitle="Disfruta de nuestras ofertas exclusivas"
             btnTitle="Ver mi cuenta"
             btnLink="/account"
-            wallpaper="/images/banner3.jpg"
+            wallpaper="/images/banner2.jpg"
           />
         )}
 
