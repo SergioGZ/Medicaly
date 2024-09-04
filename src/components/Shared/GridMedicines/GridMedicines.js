@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { map } from "lodash"
-import { fn } from "@/utils"
 import styles from "./GridMedicines.module.scss"
 
 export function GridMedicines(props) {
@@ -19,7 +18,9 @@ export function GridMedicines(props) {
 
           <div>
             <span className={styles.title}>{medicine.attributes.title}</span>
-            <span className={styles.price}>{medicine.attributes.price}€</span>
+            <span className={styles.price}>
+              {medicine.attributes.price.toFixed(2)}€
+            </span>
           </div>
         </Link>
       ))}

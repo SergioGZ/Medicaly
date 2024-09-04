@@ -3,9 +3,7 @@ import Link from "next/link"
 import { Account, Menu } from "@/components/Layout"
 import styles from "./TopBar.module.scss"
 
-export function TopBar(props) {
-  const { isOpenSearch } = props
-
+export function TopBar() {
   return (
     <div>
       <div className={styles.topBar}>
@@ -18,7 +16,7 @@ export function TopBar(props) {
         </div>
 
         <div className={styles.center}>
-          <Menu isOpenSearch={isOpenSearch} />
+          <Menu />
         </div>
 
         <div className={styles.right}>

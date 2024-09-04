@@ -20,7 +20,7 @@ export default function SearchPage(props) {
   return (
     <div>
       <>
-        <BasicLayout relative isOpenSearch={true}>
+        <BasicLayout relative>
           <Container>
             <Separator height={50} />
             <h2>Buscando: {searchText}</h2>

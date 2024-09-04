@@ -9,14 +9,10 @@ import styles from "./Menu.module.scss"
 
 const categoryCtrl = new Category()
 
-export function Menu(props) {
-  const { isOpenSearch } = props
+export function Menu() {
   const [categories, setCategories] = useState(null)
-  const [showSearch, setShowSearch] = useState(isOpenSearch)
   const [searchText, setSearchText] = useState("")
   const router = useRouter()
-
-  const handleSearch = () => setShowSearch((prevState) => !prevState)
 
   useEffect(() => {
     ;(async () => {
@@ -47,19 +43,11 @@ export function Menu(props) {
             href={`/medicines/${category.attributes.slug}`}
           >
             <Image src={category.attributes.icon.data.attributes.url} />
-            {category.attributes.title}
+            {category.attributes.title.toUpperCase()}
           </Link>
         ))}
-
-        <button className={styles.search} onClick={() => handleSearch()}>
+        <div className={styles.search}>
           <Icon name="search" />
-        </button>
-
-        <div
-          className={classNames(styles.inputContainer, {
-            [styles.active]: showSearch,
-          })}
-        >
           <Input
             id="search-meds"
             placeholder="Buscar medicamentos"
@@ -67,11 +55,6 @@ export function Menu(props) {
             focus={true}
             value={searchText}
             onChange={(_, data) => onSearch(data.value)}
-          />
-          <Icon
-            name="close"
-            className={styles.closeInput}
-            onClick={() => handleSearch()}
           />
         </div>
       </div>
