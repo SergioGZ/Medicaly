@@ -20,8 +20,8 @@ export function LoginForm() {
     onSubmit: async (formValue) => {
       try {
         const response = await authCtrl.login(formValue)
-        login(response.jwt)
-        toast.success("Bienvenido")
+        toast.success("Has iniciado sesión")
+        setTimeout(() => login(response.jwt), 2000)
       } catch (error) {
         console.error(error)
         toast.error("Credenciales incorrectas")
