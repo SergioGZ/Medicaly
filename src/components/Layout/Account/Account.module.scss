@@ -43,10 +43,17 @@
 
     &:hover {
       border: 2px solid $primary;
-
-      > i {
-        color: $text-primary !important;
-      }
     }
+
+    > i {
+      color: $primary !important;
+    }
+  }
+
+  .username {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    font-weight: 800;
   }
 }
