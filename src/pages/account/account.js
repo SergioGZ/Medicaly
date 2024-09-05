@@ -71,6 +71,7 @@ export default function AccountPage() {
         icon: "log out",
         content: "",
         onClick: logout,
+        title: "Cerrar sesión",
       },
     },
   ]
