@@ -7,15 +7,18 @@ import { Order } from "./Order"
 
 const orderCtrl = new OrderCtrl()
 
-export function Orders() {
+export function Orders(props) {
+  const { loading, onLoading } = props
   const { user } = useAuth()
   const [orders, setOrders] = useState(null)
 
   useEffect(() => {
     ;(async () => {
       try {
+        onLoading()
         const response = await orderCtrl.getAll(user.id)
         setOrders(response.data)
+        setTimeout(() => onLoading(), 500)
       } catch (error) {
         console.error(error)
       }

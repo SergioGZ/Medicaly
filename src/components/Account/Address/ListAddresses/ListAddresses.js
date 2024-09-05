@@ -8,15 +8,17 @@ import styles from "./ListAddresses.module.scss"
 const addressCtrl = new AddressCtrl()
 
 export function ListAddresses(props) {
-  const { reload, onReload } = props
+  const { reload, onReload, onLoading } = props
   const { user } = useAuth()
   const [addresses, setAddresses] = useState(null)
 
   useEffect(() => {
     ;(async () => {
       try {
+        onLoading()
         const response = await addressCtrl.getAll(user.id)
         setAddresses(response.data)
+        setTimeout(() => onLoading(), 500)
       } catch (error) {
         console.error(error)
       }

@@ -11,6 +11,7 @@ export default function AccountPage() {
   const { user, logout } = useAuth()
   const router = useRouter()
   const [reload, setReload] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   if (!user) {
     router.push("/")
@@ -19,12 +20,14 @@ export default function AccountPage() {
 
   const onReload = () => setReload((prevState) => !prevState)
 
+  const onLoading = () => setLoading((prevState) => !prevState)
+
   const panes = [
     {
       menuItem: "Mis pedidos",
       render: () => (
-        <Tab.Pane attached={false}>
-          <Orders />
+        <Tab.Pane attached={false} loading={loading}>
+          <Orders onLoading={onLoading} />
           <Separator height={80} />
         </Tab.Pane>
       ),
@@ -32,8 +35,8 @@ export default function AccountPage() {
     {
       menuItem: "Lista de deseos",
       render: () => (
-        <Tab.Pane attached={false}>
-          <Wishlist />
+        <Tab.Pane attached={false} loading={loading}>
+          <Wishlist onLoading={onLoading} />
           <Separator height={80} />
         </Tab.Pane>
       ),
@@ -41,9 +44,13 @@ export default function AccountPage() {
     {
       menuItem: "Direcciones",
       render: () => (
-        <Tab.Pane attached={false}>
+        <Tab.Pane attached={false} loading={loading}>
           <Address.AddAddress onReload={onReload} />
-          <Address.ListAddresses reload={reload} onReload={onReload} />
+          <Address.ListAddresses
+            reload={reload}
+            onReload={onReload}
+            onLoading={onLoading}
+          />
           <Separator height={80} />
         </Tab.Pane>
       ),
