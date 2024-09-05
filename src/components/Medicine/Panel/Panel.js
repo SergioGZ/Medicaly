@@ -46,7 +46,7 @@ export function Panel(props) {
           </div>
 
           <Button primary fluid loading={loading} onClick={addCartWrapper}>
-            Comprar ahora
+            Añadir al carrito
           </Button>
         </div>
       </div>
