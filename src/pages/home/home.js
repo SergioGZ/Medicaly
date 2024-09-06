@@ -22,7 +22,11 @@ export default function HomePage() {
         <Separator height={100} />
 
         <Container>
-          <Home.LatestMedicines title="Nuevos medicamentos" />
+          <Home.LatestMedicines
+            title="Antiinflamatorios y analgésicos"
+            limit={8}
+            categoryId={categoryId.analgesicos}
+          />
         </Container>
 
         <Separator height={100} />
@@ -33,9 +37,9 @@ export default function HomePage() {
 
         <Container>
           <Home.LatestMedicines
-            title="Antiinflamatorios y analgésicos"
+            title="Resfriados y gripe"
             limit={4}
-            categoryId={categoryId.analgesicos}
+            categoryId={categoryId.antigripales}
           />
         </Container>
 
@@ -63,9 +67,9 @@ export default function HomePage() {
 
         <Container>
           <Home.LatestMedicines
-            title="Resfriados y gripe"
+            title="Sistema digestivo"
             limit={4}
-            categoryId={categoryId.antigripales}
+            categoryId={categoryId.digestivos}
           />
         </Container>
 
