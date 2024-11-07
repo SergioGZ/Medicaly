@@ -18,15 +18,10 @@
     text-decoration: none;
     font-weight: bold;
     color: $text-primary;
-    border-right: 5px solid $primary;
     height: 3px;
 
     &:first-of-type {
       padding-left: 0;
-    }
-
-    &:last-of-type {
-      border-right: 0;
     }
 
     &:hover {
