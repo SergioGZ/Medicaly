@@ -26,7 +26,7 @@ export class Medicine {
   async getMedicinesByCategorySlug({ slug, page }) {
     try {
       const filters = `filters[category][slug][$eq]=${slug}`
-      const pagination = `pagination[page]=${page}&pagination[pageSize]=8`
+      const pagination = `pagination[page]=${page}&pagination[pageSize]=10`
       const sort = `sort[0]=publishedAt:DESC`
       const populate = `populate=*`
       const urlParams = `${filters}&${pagination}&${sort}&${populate}`
