@@ -40,7 +40,7 @@ export function Panel(props) {
           <div className={styles.price}>
             <span className={styles.finalPrice}>
               <Icon name="tag" />
-              {medicine.price} €
+              {medicine.price.toFixed(2)} €
             </span>
             <WishlistIcon medicineId={medicineId} className={styles.heart} />
           </div>
