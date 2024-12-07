@@ -24,7 +24,7 @@ export default function HomePage() {
         <Container>
           <Home.LatestMedicines
             title="Antiinflamatorios y analgésicos"
-            limit={8}
+            limit={10}
             categoryId={categoryId.analgesicos}
           />
         </Container>

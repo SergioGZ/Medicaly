@@ -6,7 +6,7 @@ import styles from "./LatestMedicines.module.scss"
 const medicineCtrl = new Medicine()
 
 export function LatestMedicines(props) {
-  const { title, limit = 10, categoryId = null } = props
+  const { title, limit, categoryId = null } = props
   const [medicines, setMedicines] = useState(null)
 
   useEffect(() => {
