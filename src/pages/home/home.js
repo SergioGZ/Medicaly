@@ -38,7 +38,7 @@ export default function HomePage() {
         <Container>
           <Home.LatestMedicines
             title="Resfriados y gripe"
-            limit={4}
+            limit={5}
             categoryId={categoryId.antigripales}
           />
         </Container>
@@ -68,7 +68,7 @@ export default function HomePage() {
         <Container>
           <Home.LatestMedicines
             title="Sistema digestivo"
-            limit={4}
+            limit={5}
             categoryId={categoryId.digestivos}
           />
         </Container>
