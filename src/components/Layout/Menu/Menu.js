@@ -20,7 +20,7 @@ export function Menu() {
       slug: "analgesicos",
       imgUrl:
         "https://medicaly.s3.eu-west-1.amazonaws.com/pildora_3f494e0d91.png",
-      title: "Analgésicos y antiinflamatorios",
+      title: "Antiinflamatorios",
     },
     {
       id: 2,
