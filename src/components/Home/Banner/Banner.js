@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react"
-import { Container, Image } from "semantic-ui-react"
-import { DateTime } from "luxon"
-import { Link } from "next/link"
+import { Image } from "semantic-ui-react"
 import styles from "./Banner.module.scss"
 
 export function Banner() {
