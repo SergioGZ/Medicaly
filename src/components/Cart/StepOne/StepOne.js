@@ -1,10 +1,14 @@
 import { Basket } from "./Basket"
 import { Resume } from "./Resume"
-import { NoResult } from "@/components/Shared"
+import { NoResult, Loading } from "@/components/Shared"
 import styles from "./StepOne.module.scss"
 
 export function StepOne(props) {
   const { medicines } = props
+
+  if (medicines === null) {
+    return <Loading />
+  }
 
   return (
     <div className={styles.stepOne}>
