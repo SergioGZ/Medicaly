@@ -17,8 +17,8 @@ export function Footer() {
             <ul>
               <Link href="/terms">Términos y condiciones</Link>
               <Link href="/politics">Política de privacidad</Link>
-              <Link href="#">Contacto</Link>
-              <Link href="#">FAQs</Link>
+              <Link href="/contact">Contacto</Link>
+              <Link href="/faqs">FAQs</Link>
             </ul>
           </div>
 

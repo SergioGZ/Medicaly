@@ -1,0 +1,36 @@
+@import "@/scss/index.scss";
+
+.container {
+  @media (max-width: 768px) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    color: $text-primary;
+    text-align: center;
+  }
+}
+
+.content {
+  h3 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: $text-primary;
+  }
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: $text-secondary;
+    margin-bottom: 1.5em;
+    text-align: justify;
+
+    strong {
+      color: $text-primary;
+    }
+  }
+}

@@ -9,7 +9,7 @@ export default function Politics() {
       <Seo title="Medicaly | Política de Privacidad" />
       <BasicLayout relative>
         <Container className={styles.container}>
-          <Separator height={20} />
+          <Separator height={10} />
 
           <h2>Política de Privacidad</h2>
 
