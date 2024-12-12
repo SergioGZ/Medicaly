@@ -99,4 +99,25 @@ export class Medicine {
       throw error
     }
   }
+
+  async getRandomMedicine() {
+    try {
+      const pagination = `pagination[pageSize]=100`
+      const populate = `populate=*`
+      const urlParams = `${pagination}&${populate}`
+
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.MEDICINE}?${urlParams}`
+
+      const response = await fetch(url)
+      const result = await response.json()
+
+      if (response.status !== 200) throw result
+
+      // Seleccionar una medicina aleatoria del array
+      const randomIndex = Math.floor(Math.random() * result.data.length)
+      return result.data[randomIndex]
+    } catch (error) {
+      throw error
+    }
+  }
 }

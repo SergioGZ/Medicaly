@@ -31,7 +31,7 @@ export function Account() {
       >
         <Icon name="user outline" />
       </Button>
-      {user && <span className={styles.username}>{user?.username}</span>}
+      {/* {user && <span className={styles.username}>{user?.username}</span>} */}
     </div>
   )
 }

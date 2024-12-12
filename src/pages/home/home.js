@@ -45,23 +45,7 @@ export default function HomePage() {
 
         <Separator height={100} />
 
-        {!user ? (
-          <BannerAd
-            title="Regístrate para realizar tus compras"
-            subtitle="Recibe tus pedidos en la puerta de tu casa"
-            btnTitle="Entrar ahora"
-            btnLink="/join/sign-up"
-            wallpaper="/images/banner2.jpg"
-          />
-        ) : (
-          <BannerAd
-            title="¡Bienvenido de nuevo!"
-            subtitle="Disfruta de nuestras ofertas exclusivas"
-            btnTitle="Ver mi cuenta"
-            btnLink="/account"
-            wallpaper="/images/banner2.jpg"
-          />
-        )}
+        <BannerAd wallpaper="/images/banner2.jpg" />
 
         <Separator height={100} />
 
