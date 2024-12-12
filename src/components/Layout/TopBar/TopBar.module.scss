@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: $background-secondary;
   width: 100%;
   padding: 20px;
@@ -11,19 +12,22 @@
 }
 
 .left {
-  min-width: 200px;
+  width: 180px;
+  flex-shrink: 0;
 
   img {
-    width: 200px !important;
+    width: 180px !important;
     height: 40px !important;
     object-fit: contain;
   }
 }
 
 .desktopMenu {
-  flex: 1;
   display: flex;
   justify-content: space-between;
+  flex: 1;
+  margin: 0 20px;
+  min-width: 0;
 }
 
 .center {
@@ -31,10 +35,13 @@
   display: flex;
   justify-content: center;
   color: $text-primary;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .right {
-  width: 200px;
+  width: 120px;
+  flex-shrink: 0;
   display: flex;
   justify-content: flex-end;
   color: $text-primary;
@@ -116,11 +123,11 @@
   }
 
   .left {
-    min-width: 200px;
+    width: 180px;
     margin-right: 20px;
 
     img {
-      width: 200px !important;
+      width: 180px !important;
       height: 40px !important;
     }
   }

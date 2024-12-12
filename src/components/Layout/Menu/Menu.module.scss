@@ -15,21 +15,22 @@
   > a {
     display: flex;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 15px;
     text-decoration: none;
     font-weight: bold;
     color: $text-primary;
     height: 3px;
-    width: 250px;
+    width: 220px;
     justify-content: center;
+    white-space: nowrap;
 
     &:hover {
       color: $primary-hover;
     }
 
     img {
-      height: 30px;
-      padding-right: 10px;
+      height: 25px;
+      padding-right: 8px;
       flex-shrink: 0;
     }
 
@@ -44,7 +45,7 @@
   .search {
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 15px;
     justify-content: center;
     height: 100%;
     border: 0;
@@ -54,13 +55,13 @@
     }
 
     i {
-      margin-right: 10px;
-      font-size: 20px;
+      margin-right: 8px;
+      font-size: 18px;
       color: $text-primary;
     }
 
     .input {
-      width: 200px;
+      width: 180px;
       height: 100%;
       overflow: hidden;
       border-radius: 100px;
@@ -69,8 +70,8 @@
         background-color: $primary !important;
         border: 0 !important;
         color: $text-primary !important;
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 14px;
+        padding: 8px 15px;
 
         &::placeholder {
           color: $text-primary;
