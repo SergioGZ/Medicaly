@@ -88,6 +88,37 @@
     }
   }
 
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .amount {
+      color: $text-primary;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .discount {
+      background-color: $primary;
+      color: $text-primary;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .amount {
+        font-size: 2rem;
+      }
+      .discount {
+        font-size: 1rem;
+      }
+    }
+  }
+
   :global(.button) {
     transition: box-shadow 0.3s ease;
     box-shadow: 0 0 10px rgba(71, 234, 172, 0.2);
