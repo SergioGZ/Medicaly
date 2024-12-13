@@ -47,7 +47,7 @@ export class Medicine {
   async searchMedicines(text, page) {
     try {
       const filters = `filters[title][$contains]=${text}`
-      const pagination = `pagination[page]=${page}&pagination[pageSize]=12`
+      const pagination = `pagination[page]=${page}&pagination[pageSize]=10`
       const sort = `sort[0]=publishedAt:DESC`
       const populate = `populate=*`
       const urlParams = `${filters}&${pagination}&${sort}&${populate}`
